@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../static/registration.css">
+</head>
+<body>
+    <h1>Список користувачів</h1>
+    {% for user in users %}
+    <p><strong>ім'я:</strong> {{ user.username }}
+        <strong>email:</strong> {{ user.email }}
+        <strong>пароль:</strong> {{ user.password }}
+    </p>
+    {% endfor %}
+    <h2>Форма для нових користувачів</h2>
+    <from methods="POST" action="/register">
+        <input type="text" name="username" placeholder="ім'я користувача" required>
+        <input type="text">
+    </from>
+</body>
